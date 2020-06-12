@@ -1,22 +1,5 @@
-palette = (event) =>{
-    var currcolor;
-    currcolor = document.getElementById('current');
-    if (event.target.id === "red"){
-        currcolor.style.backgroundColor = "red"
-    }
-    if (event.target.id === "green"){
-        currcolor.style.backgroundColor = "green"
-    }
-    if (event.target.id === "yellow"){
-        currcolor.style.backgroundColor = "yellow"
-    }
-    if (event.target.id === "blue"){
-        currcolor.style.backgroundColor = "blue"
-    }
-}
-
 clicktable = (event) =>{
-    var palettecolor = document.getElementById('current').style.backgroundColor
+    var palettecolor = document.getElementById('colorpicker').value
     if (event.target.style.backgroundColor === palettecolor){
         event.target.style.backgroundColor = "white";
     }
@@ -51,9 +34,4 @@ document.addEventListener('DOMContentLoaded', function () {
   for (var x=0; x<document.getElementsByTagName('td').length;x++){
       newcells[x].onclick = clicktable
   }
-  var palettecolor = document.getElementsByClassName("dot");
-  for (var x=0; x<document.getElementsByClassName("dot").length;x++){
-      palettecolor[x].onclick = palette;
-  }
-
 });
