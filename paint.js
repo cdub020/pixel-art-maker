@@ -1,31 +1,44 @@
 palette = (event) =>{
     var currcolor;
-    if (event.target.style.backgroundColor === "red"){
-        alert("Red")
-        currcolor = document.getElementById('current');
-        currcolor.style.backgroundColor = "red";
+    currcolor = document.getElementById('current');
+    if (event.target.id === "red"){
+        currcolor.style.backgroundColor = "red"
     }
-    else if (event.target.style.backgroundColor === "blue"){
-        currcolor = document.getElementById('current');
-        currcolor.backgroundColor = "blue";
+    if (event.target.id === "green"){
+        currcolor.style.backgroundColor = "green"
     }
-    else if (event.target.style.backgroundColor === "yellow"){
-        currcolor = document.getElementById('current');
-        currcolor.backgroundColor = "yellow";
+    if (event.target.id === "yellow"){
+        currcolor.style.backgroundColor = "yellow"
     }
-    else{
-        currcolor = document.getElementById('current');
-        currcolor.backgroundColor = "green";
+    if (event.target.id === "blue"){
+        currcolor.style.backgroundColor = "blue"
     }
+    // if (event.target.style.backgroundColor === "red"){
+    //     currcolor = document.getElementById('current');
+    //     currcolor.style.backgroundColor = "red";
+    // }
+    // else if (event.target.style.backgroundColor === "blue"){
+    //     currcolor = document.getElementById('current');
+    //     currcolor.backgroundColor = "blue";
+    // }
+    // else if (event.target.style.backgroundColor === "yellow"){
+    //     currcolor = document.getElementById('current');
+    //     currcolor.backgroundColor = "yellow";
+    // }
+    // else{
+    //     currcolor = document.getElementById('current');
+    //     currcolor.backgroundColor = "green";
+    // }
 }
 
 clicktable = (event) =>{
+    var palettecolor = document.getElementById('current').style.backgroundColor
     if (event.target.style.backgroundColor !== "white" &&
         event.target.style.backgroundColor !== ""){
         event.target.style.backgroundColor = "white";
     }
     else{
-        event.target.style.backgroundColor = "green";
+        event.target.style.backgroundColor = palettecolor;
     }
 }
 
@@ -51,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
   for (var x=0; x<document.getElementsByTagName('td').length;x++){
       newcells[x].onclick = clicktable
   }
-console.log(document.getElementsByClassName("dot").length)
   var palettecolor = document.getElementsByClassName("dot");
   for (var x=0; x<document.getElementsByClassName("dot").length;x++){
       palettecolor[x].onclick = palette;
