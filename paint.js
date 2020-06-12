@@ -29,14 +29,17 @@ function Table (){
     var newtable = document.createElement("table");
     newtable.id = "initial"
     newtable.style.border = '1px solid black';
-    newtable.width = '200px';
-    for (var x=0; x<3;x++){
+    newtable.style.borderCollapse = "collapse";
+    newtable.width = '500px';
+    newtable.height = "150px";
+    for (var x=0; x<40;x++){
         var tr = newtable.insertRow();  
-        for (var y=0;y<3;y++)  {
+        for (var y=0;y<50;y++)  {
             var td = tr.insertCell();
-            td.style.height = "20px";
+            td.style.height = "10px";
+            td.style.width = "10px";
             //td.appendChild(document.createTextNode("text"));
-            td.style.border = '1px solid black'
+            td.style.border = '1px solid black';
         }
     }
         document.body.appendChild(newtable)
