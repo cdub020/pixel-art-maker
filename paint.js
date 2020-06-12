@@ -2,6 +2,7 @@
 clicktable = (event) =>{
     var palettecolor = document.getElementById('colorpicker').value
     event.target.style.backgroundColor = palettecolor;
+    
 }
 
 function Table (){
