@@ -13,28 +13,11 @@ palette = (event) =>{
     if (event.target.id === "blue"){
         currcolor.style.backgroundColor = "blue"
     }
-    // if (event.target.style.backgroundColor === "red"){
-    //     currcolor = document.getElementById('current');
-    //     currcolor.style.backgroundColor = "red";
-    // }
-    // else if (event.target.style.backgroundColor === "blue"){
-    //     currcolor = document.getElementById('current');
-    //     currcolor.backgroundColor = "blue";
-    // }
-    // else if (event.target.style.backgroundColor === "yellow"){
-    //     currcolor = document.getElementById('current');
-    //     currcolor.backgroundColor = "yellow";
-    // }
-    // else{
-    //     currcolor = document.getElementById('current');
-    //     currcolor.backgroundColor = "green";
-    // }
 }
 
 clicktable = (event) =>{
     var palettecolor = document.getElementById('current').style.backgroundColor
-    if (event.target.style.backgroundColor !== "white" &&
-        event.target.style.backgroundColor !== ""){
+    if (event.target.style.backgroundColor === palettecolor){
         event.target.style.backgroundColor = "white";
     }
     else{
@@ -51,7 +34,8 @@ function Table (){
         var tr = newtable.insertRow();  
         for (var y=0;y<3;y++)  {
             var td = tr.insertCell();
-            td.appendChild(document.createTextNode('Cell'));
+            td.style.height = "20px";
+            //td.appendChild(document.createTextNode("text"));
             td.style.border = '1px solid black'
         }
     }
